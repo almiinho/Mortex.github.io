@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Contact Us - Mortex</title>
+    <link rel="icon" type="image/x-icon" href="favicon.png">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Mortex</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="to-do.html">To-Do</a></li>
+        </ul>
+    </nav>
+    <section class="contact"> 
+        <div class="container"> 
+            <div class="row"> 
+                <div class="col-md-6">                   
+                  <h2>Contact <span class="badge badge-secondary">Us</span></h2>               
+                     <form action="#" class="contact-form" id="myForm">
+                      <div class="form-group">
+                          <label for="name">Name:</label>
+                          <input type="text" id="name" name="name" required>
+                      </div>
+                      <div class="form-group">
+                          <label for="email">Email:</label>
+                          <input type="email" id="email" name="email" class="form-control" required>
+                      </div>
+                      <div class="form-group">
+                          <label for="message">Message:</label>
+                          <textarea id="message" name="message" rows="4" class="form-control" required></textarea>
+                      </div>
+                    
+                      <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                  <script>
+                    function validateForm() {
+                      var name = document.getElementById("name").value;
+                      var email = document.getElementById("email").value;
+                      var message = document.getElementById("message").value;
+              
+                      var nameError = document.getElementById("nameError");
+                      var emailError = document.getElementById("emailError");
+                      var messageError = document.getElementById("messageError");
+              
+                      nameError.textContent = "";
+                      emailError.textContent = "";
+                      messageError.textContent = "";
+              
+                      var valid = true;
+              
+                    if (name.trim() === "") {
+                       nameError.textContent = "Name is required";
+                       alert("Please fill in all required fields.");
+                        return false;
+                       }
+              
+                    if (email.trim() === "") {
+                       emailError.textContent = "Email is required";
+                       alert("Please fill in all required fields.");
+                      return false;
+                      } else if (!validateEmail(email)) {
+                       emailError.textContent = "Invalid email address";
+                      alert("Please fill in all required fields.");
+                     return false;
+                        }
+              
+                     if (message.trim() === "") {
+                       messageError.textContent = "Message is required";
+                       alert("Please fill in all required fields.");
+                        }
+              
+                     if (!valid) {
+                      e.preventDefault(); 
+                        }
+                    };
+                  </script>
+                  
+                  
+                    <div class="container"> 
+                        <div class="row"> 
+                          <div class="col-md-6"> 
+                            <section id="feedback"> 
+                              <h3>Feedback <span class="badge badge-secondary">Us</span></h3>
+                              <p>Is the site convenient to use?
+                              </p>  
+                              <button onclick="showNotification('Hooray!', 'Thanks for the feedback')">Yes it is</button>
+                              <button onclick="showNotification('Eh', 'But still thanks for the feedback')">No, it is not</button>
+    
+                             <div id="notification"></div>
+                            </section> 
+                            <script>
+                              function showNotification(title, message, type) {
+                                  const notification = document.getElementById('notification');
+                                  notification.innerHTML = `<strong>${title}</strong>: ${message}`;
+
+                                  notification.style.display = 'block';
+                      
+                                  setTimeout(() => {
+                                      notification.style.display = 'none';
+                                  }, 3000); 
+                              }
+                          </script>
+                          </div> 
+                          <div class="col-md-6"> 
+                            <section id="web-sites"> 
+                              <h3>Our web sites:</h3> 
+                              
+                              <div class="list-group"> 
+                                <a 
+                                  href="https://www.instagram.com/almiinho/" 
+                                  class="list-group-item list-group-item-action" 
+                                  >Instagram: @alminho</a 
+                                > 
+                                <a href="#" class="list-group-item list-group-item-action" 
+                                  >Facebook: @almazazamatov</a 
+                                > 
+                                <a href="#" class="list-group-item list-group-item-action" 
+                                  >Telegram: @almiinho</a 
+                                > 
+                              </div> 
+                            </section> 
+                          </div> 
+                          
+                        </div> 
+                      </div>
+                </div> 
+            </div> 
+        </div> 
+    </section>
+    
+
+    <footer>
+        <p>&copy; Mortex 2023</p>
+    </footer>
+</body>
+</html>
